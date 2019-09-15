@@ -1,12 +1,26 @@
 package Ramy;
 import java.util.Scanner;
-interface Pack
+abstract class N
 {
-    void odd();
+    abstract void odd(int arr);
 }
-class N implements Pack
+class No extends N
 {
-    public void odd()
+     void odd(int arr)
+    {
+        
+        if(arr%2==0)
+            System.out.println("The number is even");
+        else
+            System.out.println("The number is odd");
+        
+    }
+    
+}
+
+public class OddEven
+{
+    public static void main(String[] args)
     {
         
             int arr[]=new int[10];
@@ -16,23 +30,11 @@ class N implements Pack
         {
          arr[i]=sc.nextInt();
         }
+        No obj=new No();
         for(int i=0;i<10;i++)
         {
-        if(arr[i]%2==0)
-            System.out.println("The number is even");
-        else
-            System.out.println("The number is odd");
+        obj.odd(arr[i]);
         }
-    }
-    
-}
-
-public class OddEven
-{
-    public static void main(String[] args)
-    {
-        N obj=new N();
-        obj.odd();
         
     }
     
